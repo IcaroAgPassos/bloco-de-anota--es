@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap');
+
+:root{
+    --bg-color: #9fdaae;
+    --block-color: #fae64d; 
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.title-notepad{
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+    text-shadow: .15rem .15rem .18rem #fff;
+}
+
+.main-content{
+    position: relative;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.section-content{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 12rem);
+    gap: 3.5rem;
+    justify-content: center;
+    width: 95%;
+    height: 90%;
+    background-color: 100%;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.notepad{
+    width: 12rem;
+    height: 12rem;
+    background: var(--block-color);
+    z-index: 1;
+    border: 2px solid #b1a805;
+    cursor: pointer;
+}
+
+.text-notepad{
+    margin: .25rem;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: var(--block-color);
+    outline: none;
+    font-size: .9rem;
+    resize: none;
+    border: 2px solid #b1a805;
+    padding: .5rem .5rem;
+    cursor: pointer;
+}
+
+.text-notepad.active{
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+
+.btn-add-notepad{
+    width: 12rem;
+    height: 12rem;
+    background-color: #bac5cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+.plus-sinal{
+    transition: transform .3s;
+}
+
+.btn-add-notepad:hover .plus-sinal{
+    transform: scale(.9);
+}
