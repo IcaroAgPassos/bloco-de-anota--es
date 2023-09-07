@@ -8,12 +8,29 @@ btnAdd.addEventListener('click', function (){
     textNotepad.classList.add('text-notepad')
     newNotepad.appendChild(textNotepad);
     section.appendChild(newNotepad);
+
+    const notepad = document.querySelectorAll('.text-notepad');
+        notepad.forEach( cadaNotepad => {
+            cadaNotepad.addEventListener('click', function(){
+                const modalNotepad = document.querySelector('.modal-notepad');
+                modalNotepad.classList.add('active-notepad')
+                const notepadEdit = document.createElement('div');
+                const btnExitNotepad = document.createElement('i');
+                btnExitNotepad.classList.add('fa-solid', 'fa-x', 'btn-exit');
+                notepadEdit.classList.add('content-notepad-edit');
+                notepadEdit.appendChild(cadaNotepad, btnExitNotepad);
+                modalNotepad.appendChild(notepadEdit);
+        })
+    })
 })
 
-const notepad = document.querySelector('.text-notepad');
 
-notepad.addEventListener('click', function(){
-    notepad.classList.add('active')
-})
+
+
+
+
+
+
+
 
 
