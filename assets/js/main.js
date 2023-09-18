@@ -8,21 +8,35 @@ btnAdd.addEventListener('click', function (){
     textNotepad.classList.add('text-notepad')
     newNotepad.appendChild(textNotepad);
     section.appendChild(newNotepad);
+    textNotepad.addEventListener('click', function(){
+        const modalNotepad = document.querySelector('.modal-notepad');
+        modalNotepad.classList.add('active-notepad')
+        const notepadEdit = document.createElement('div');
+        const btnExitNotepad = document.createElement('i');
+        btnExitNotepad.classList.add('fa-solid', 'fa-x', 'btn-exit');
+        notepadEdit.classList.add('content-notepad-edit');
+        notepadEdit.appendChild(btnExitNotepad);
+        modalNotepad.appendChild(notepadEdit);
+        
+        const textAreaNew = document.createElement('textarea');
+        notepadEdit.appendChild(textAreaNew);
+        textAreaNew.classList.add('text-notepad')
 
-    const notepad = document.querySelectorAll('.text-notepad');
-        notepad.forEach( cadaNotepad => {
-            cadaNotepad.addEventListener('click', function(){
-                const modalNotepad = document.querySelector('.modal-notepad');
-                modalNotepad.classList.add('active-notepad')
-                const notepadEdit = document.createElement('div');
-                const btnExitNotepad = document.createElement('i');
-                btnExitNotepad.classList.add('fa-solid', 'fa-x', 'btn-exit');
-                notepadEdit.classList.add('content-notepad-edit');
-                notepadEdit.appendChild(cadaNotepad, btnExitNotepad);
-                modalNotepad.appendChild(notepadEdit);
+
+        btnExitNotepad.addEventListener('click', function(){
+            modalNotepad.classList.remove('active-notepad')
+            modalNotepad.removeChild(notepadEdit)
         })
     })
 })
+
+const notepads = [
+    {
+        id: 1,
+        textArea: null,
+        value: null, 
+    }
+];
 
 
 
