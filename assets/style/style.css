@@ -70,6 +70,7 @@ body{
     padding: .5rem .5rem;
     cursor: pointer;
     transition: transform .3s;
+    position: relative;
 }
 
 .notepad:hover .text-notepad{
@@ -130,10 +131,19 @@ body{
     align-items: center;
 }
 
-.modal-notepad .text-notepad{
+.modal-notepad .text-notepad-edit{
     width: 80%;
     height: 80%;
     font-size: 1.2rem;
+    background: var(--block-color);
+    margin: .25rem;
+    border: none;
+    background-color: var(--block-color);
+    outline: none;
+    resize: none;
+    border: 2px solid #b1a805;
+    padding: .5rem .5rem;
+    position: relative;
 }
 
 .btn-exit{
@@ -143,6 +153,7 @@ body{
     top: 14%;
     cursor: pointer;
     transition: color .3s, scale .3s;
+    z-index: 2;
 }
 
 .btn-exit:hover{

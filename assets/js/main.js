@@ -9,6 +9,7 @@ btnAdd.addEventListener('click', function (){
     newNotepad.appendChild(textNotepad);
     section.appendChild(newNotepad);
     textNotepad.addEventListener('click', function(){
+        let valueBDNotepad = textNotepad.value;
         const modalNotepad = document.querySelector('.modal-notepad');
         modalNotepad.classList.add('active-notepad')
         const notepadEdit = document.createElement('div');
@@ -20,23 +21,27 @@ btnAdd.addEventListener('click', function (){
         
         const textAreaNew = document.createElement('textarea');
         notepadEdit.appendChild(textAreaNew);
-        textAreaNew.classList.add('text-notepad')
+        textAreaNew.classList.add('text-notepad-edit')
+        textAreaNew.value = valueBDNotepad;
 
 
         btnExitNotepad.addEventListener('click', function(){
+            let saveEdit = textAreaNew.value
+            textNotepad.value = saveEdit;
             modalNotepad.classList.remove('active-notepad')
             modalNotepad.removeChild(notepadEdit)
+            console.log(saveEdit);
         })
     })
 })
 
-const notepads = [
-    {
-        id: 1,
-        textArea: null,
-        value: null, 
-    }
-];
+// const notepads = [
+//     {
+//         id: 1,
+//         textArea: null,
+//         value: null, 
+//     }
+// ];
 
 
 
