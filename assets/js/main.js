@@ -35,15 +35,6 @@ btnAdd.addEventListener('click', function (){
     })
 })
 
-// const notepads = [
-//     {
-//         id: 1,
-//         textArea: null,
-//         value: null, 
-//     }
-// ];
-
-
 
 
 
